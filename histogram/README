@@ -1,0 +1,13 @@
+Compile with cuda55 toolkit
+
+Set the 'option' flag to
+  0: for running naive
+  2: for 1 block with loop
+  3: for shared memory histogram with reduction
+Change the 'length' flag to set the length
+Change the 'block_size' flag to set block size
+
+prun -v -1 -np 1 -native '-l gpu=GTX480' myhistogram <option> <image_size> <block_size>
+
+e.g.
+cat prun -v -1 -np 1 -native '-l gpu=GTX480' myhistogram 2 4194304 1024

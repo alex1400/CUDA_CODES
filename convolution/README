@@ -1,0 +1,11 @@
+Compile with cuda55 toolkit
+
+image size, block size and filter size
+is set inside convolution.cu (in definition)
+
+Set option for choosing what CUDA version to run
+  0: Naive
+  1: Constant filter
+  2: Shared memory (not working)
+
+prun -np 1 -native '-l gpu=GTX480' myconvolution <option>
